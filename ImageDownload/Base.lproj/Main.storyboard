@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageDownload" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMV-qw-R1T">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="oJ8-6b-gSj"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Sync" id="xsS-2S-mj5">
+                                        <connections>
+                                            <action selector="btnSyncDownloadClicked:" destination="BYZ-38-t0r" id="Uyx-tr-YBb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="fYc-lL-vXp"/>
+                                    <barButtonItem title="Async" id="BKv-Yv-FWU">
+                                        <connections>
+                                            <action selector="btnAsyncDownloadClicked:" destination="BYZ-38-t0r" id="KMp-EP-NUq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="4ZO-9a-eb7"/>
+                                    <barButtonItem title="Async + Completion" id="B0D-IH-Ucy">
+                                        <connections>
+                                            <action selector="btnAsyncCompletionClicked:" destination="BYZ-38-t0r" id="64b-cs-EOz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iWF-d0-GOG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Egy-As-Syq">
+                                <rect key="frame" x="13" y="318.5" width="349" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2Ah-En-f65"/>
+                                    <constraint firstAttribute="width" constant="345" id="eAj-Cp-9pp"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderDragged:" destination="BYZ-38-t0r" eventType="valueChanged" id="K8C-bC-M62"/>
+                                </connections>
+                            </slider>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="NcG-W3-ESZ">
+                                <rect key="frame" x="169" y="260" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="2AN-nv-Rzx"/>
+                                    <constraint firstAttribute="width" constant="37" id="y5t-Xt-uOC"/>
+                                </constraints>
+                                <color key="color" red="0.72156862749999995" green="0.12549019610000001" blue="0.1450980392" alpha="1" colorSpace="deviceRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Egy-As-Syq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0r8-Gg-UHi"/>
+                            <constraint firstItem="NcG-W3-ESZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0tM-Qq-ecd"/>
+                            <constraint firstItem="SMV-qw-R1T" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="27S-oQ-IBN"/>
+                            <constraint firstItem="iWF-d0-GOG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3hj-uQ-Ko6"/>
+                            <constraint firstItem="Egy-As-Syq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8Zv-bq-ma0"/>
+                            <constraint firstItem="iWF-d0-GOG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Mr3-GP-fbo"/>
+                            <constraint firstItem="SMV-qw-R1T" firstAttribute="top" secondItem="iWF-d0-GOG" secondAttribute="bottom" id="TPb-78-VyF"/>
+                            <constraint firstItem="SMV-qw-R1T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TUe-8W-WCw"/>
+                            <constraint firstItem="SMV-qw-R1T" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fSc-BJ-Ss8"/>
+                            <constraint firstItem="iWF-d0-GOG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wIy-wn-6Pf"/>
+                            <constraint firstItem="Egy-As-Syq" firstAttribute="top" secondItem="NcG-W3-ESZ" secondAttribute="bottom" constant="21.5" id="wkV-Yx-ig7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="NcG-W3-ESZ" id="aar-G6-9jf"/>
+                        <outlet property="imgView" destination="iWF-d0-GOG" id="YY9-Af-MfJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40.799999999999997" y="25.637181409295355"/>
+        </scene>
+    </scenes>
+</document>
